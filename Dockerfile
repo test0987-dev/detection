@@ -1,7 +1,6 @@
 FROM python:3.10-slim
 
-
-WORKDIR/app
+WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -25,7 +24,10 @@ RUN git clone https://github.com/facebookresearch/detectron2.git && \
 # Copy the project files
 COPY . .
 
-# Expose the port your Flask app runs on (modify if needed)
+# Create necessary directories
+RUN mkdir -p uploads static/results
+
+# Expose the port your Flask app runs on
 EXPOSE 5000
 
 # Command to run the application
