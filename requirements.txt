@@ -1,0 +1,9 @@
+flask
+flask-cors
+pillow
+numpy
+torch
+torchvision
+opencv-python
+#detectron2
+huggingface_hub
